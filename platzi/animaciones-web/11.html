@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transformacion punto de origen</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+    .container {
+      border: 1px solid red;
+    }
+    .cuadrado {
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      transition: .3s;
+    }
+    .container:hover .cuadrado {
+      animation-name: cuadrado;
+      animation-duration: .3s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode:backwards;
+    }
+    @keyframes cuadrado {
+      0%{
+        transform: rotate(-45deg)
+      }
+      100%{
+        transform: rotate(45deg)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">
+      Hola mundo!
+    </div>
+  </div>
+</body>
+</html>

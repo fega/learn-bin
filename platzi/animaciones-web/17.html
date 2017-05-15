@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Web animations API</title>
+  <style media="screen">
+    body{
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center
+    }
+    section{
+      width: 600px;
+      border: 1px solid grey;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div id="pelota"></div>
+  </section>
+  <script type="text/javascript">
+    const pelota =document.getElementById('pelota')
+
+    pelota.animate([{
+      transform: 'translate(0)',
+      width: '100px',
+      height: '100px'
+    },{
+      transform: 'translate(550px)',
+      width: '50px',
+      height: '50px'
+    }],{
+      duration: 1000,
+      delay: 200,
+      iterations: Infinity,
+      direction: 'alternate',
+      easing: ('cubic-bezier(0.7,0,0,0.7)'),
+      iterationStart: .5
+    })
+  </script>
+</body>
+</html>

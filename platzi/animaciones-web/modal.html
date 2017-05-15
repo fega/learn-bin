@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal implementation</title>
+  <style>
+    body{
+      background: #f0c27b;
+      background: -webkit-linear-gradient(to right, #f0c27b, #4b1248);
+      background: linear-gradient(to right, #f0c27b, #4b1248);
+      font-family:sans-serif;}
+    button{
+      background: #4b1248;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      padding: 10px;
+      margin: 4px;
+
+    }
+    #overlay{
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      animation-name: in;
+      animation-duration: 0.3s;}
+    #modal{
+      max-width: 500px;
+      max-height: 300px;
+      background: white;
+      width: 80%;
+      margin: 9% auto;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      border-radius: 5px;
+      padding: 15px;
+      overflow-y:auto;
+      animation-name: modalIn,in;
+      animation-duration: 0.5s,1s;}
+    .btns{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right:0;
+      padding: 15px;
+      background: white}
+    @keyframes in {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+
+      }
+    }
+    @keyframes out {
+      0%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    @keyframes modalIn {
+      0%{
+        transform: translateY(-3000px) scale(0);
+      }
+      100%{
+        transform: translateY(0px) scale(1);
+      }
+    }
+    @keyframes modalOut {
+        100%{
+          transform: translateY(-3000px) scale(0);
+        }
+        0%{
+          transform: translateY(0px) scale(1);
+        }}
+  </style>
+</head>
+<body>
+  <h1>MODAL</h1>
+  <div id="overlay">
+    <div id="modal">
+      <h1>Hola</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <div class="btns">
+        <button id="accept">Aceptar</button>
+        <button id="cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const accept = document.getElementById('accept')
+    const cancel = document.getElementById('cancel')
+    const modal = document.getElementById('modal')
+    const overlay = document.getElementById('overlay')
+    const hide  = () =>{
+      modal.style.animation = 'modalOut .8s forwards'
+      overlay.style.animation = 'out .8s forwards'
+    }
+    accept.addEventListener('click',hide)
+  </script>
+</body>
+</html>
