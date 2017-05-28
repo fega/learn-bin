@@ -1,0 +1,129 @@
+@media(max-width: 1000px){
+
+.custom-media{
+    color:red
+}
+  }
+/*costum properties*/
+/* mixins */
+.mixin{
+  color: gray;
+  background-color: gray;
+}
+
+.custom{
+  color: gray;
+  background-color: black
+}
+
+/*calc*/
+.calc{
+  font-size: 35px
+}
+
+/*autoprefix*/
+.flexbox{
+  display: -webkit-box;
+  display: flex;
+}
+
+/*nested*/
+.nested-joint{
+    display:block;
+  }
+.nested .separate{
+    display:-ms-grid;
+    display:grid;
+  }
+.nested.together{
+    display:inline;
+  }
+@media(max-width: 500px){
+.nested{
+    display:block
+}
+  }
+
+/*color function*/
+.color{
+  color: blue;
+  color: rgba(0, 0, 255, 0.1);/*alpha*/
+  color: rgb(0, 0, 51); /*lightness*/
+  color: rgb(26, 26, 255); /*whiteness*/
+  color: rgb(0, 0, 230); /*blackness*/
+
+  color: rgb(128, 128, 255);
+  color: rgb(0, 0, 128);
+  /*color: color(blue blend(50%));*/
+  color: rgb(201, 201, 255);
+}
+
+/*filters*/
+.f-blur{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="4" /></filter></svg>#filter');
+    -webkit-filter: blur(4px);
+            filter: blur(4px)
+  }
+.f-grayscale{
+    -webkit-filter: grayscale(4px);
+            filter: grayscale(4px)
+  }
+.f-contrast{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="2" intercept="-0.5" /><feFuncG type="linear" slope="2" intercept="-0.5" /><feFuncB type="linear" slope="2" intercept="-0.5" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: contrast(200%);
+            filter: contrast(200%)
+  }
+.f-sepia{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.6358 0.4614 0.1134 0 0 0.20939999999999998 0.8116000000000001 0.1008 0 0 0.1632 0.3204 0.4786 0 0 0 0 0 1 0" /></filter></svg>#filter');
+    -webkit-filter: sepia(60%);
+            filter: sepia(60%)
+  }
+.f-saturate{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.4491 0.5005 0.0504 0 0 0.1491 0.8035 0.0504 0 0 0.1491 0.5005 0.3504 0 0 0 0 0 1 0" /></filter></svg>#filter');
+    -webkit-filter: saturate(30%);
+            filter: saturate(30%)
+  }
+.f-hue-rotate{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="90" /></filter></svg>#filter');
+    -webkit-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg)
+  }
+.f-invert{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.5 0.5" /><feFuncG type="table" tableValues="0.5 0.5" /><feFuncB type="table" tableValues="0.5 0.5" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(50%);
+            filter: invert(50%)
+  }
+.f-opacity{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncA type="table" tableValues="0 0.25" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: opacity(25%);
+            filter: opacity(25%)
+  }
+.f-brightness{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.4" /><feFuncG type="linear" slope="0.4" /><feFuncB type="linear" slope="0.4" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: brightness(0.4);
+            filter: brightness(0.4)
+  }
+.f-drop-shadow{
+    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="20" /><feOffset dx="17" dy="17" result="offsetblur" /><feFlood flood-color="rgba(0,0,255,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+    -webkit-filter: drop-shadow(16px 16px 20px blue);
+            filter: drop-shadow(16px 16px 20px blue)
+  }
+
+/*snap-image*/
+.snap-container{
+    width: 400px;
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-scroll-snap-points-x: repeat(100%);
+        -ms-scroll-snap-points-x: repeat(100%);
+            scroll-snap-points-x: repeat(100%);
+    -webkit-scroll-snap-type: mandatory;
+        -ms-scroll-snap-type: mandatory;
+            scroll-snap-type: mandatory;
+    -webkit-scroll-snap-destination: 0 100%;
+        -ms-scroll-snap-destination: 0 100%;
+            scroll-snap-destination: 0 100%;
+  }
+.snap-image{
+
+  }

@@ -1,0 +1,119 @@
+@custom-media --s (max-width: 600px);
+@custom-media --m (max-width: 800px);
+@custom-media --l (max-width: 1000px);
+@custom-media --xl (max-width: 600px);
+
+.custom-media{
+  @media(--l){
+    color:red;
+  }
+}
+/*costum properties*/
+:root{
+  --color-main: gray;
+  --color-secundary: black;
+  --sub-property: var(--color-secundary);
+  --fontSize: 10px;
+}
+/* mixins */
+@define-mixin mixin $myColor, $myBackground{
+  color: $(myColor);
+  background-color: $(myBackground);
+}
+.mixin{
+  @mixin mixin var(--color-main), var(--color-main);
+}
+
+.custom{
+  color: var(--color-main);
+  background-color: var(--sub-property)
+}
+
+/*calc*/
+.calc{
+  font-size: calc(var(--fontSize)*3.5)
+}
+
+/*autoprefix*/
+.flexbox{
+  display: flex;
+}
+
+/*nested*/
+.nested{
+  &-joint{
+    display:block;
+  }
+  .separate{
+    display:grid;
+  }
+  &.together{
+    display:inline;
+  }
+  @media(max-width: 500px){
+    display:block;
+  }
+}
+
+/*color function*/
+.color{
+  color: blue;
+  color: color(blue a(10%));/*alpha*/
+  color: color(blue l(10%)); /*lightness*/
+  color: color(blue w(+10%)); /*whiteness*/
+  color: color(blue b(+10%)); /*blackness*/
+
+  color: color(blue tint(50%));
+  color: color(blue shade(50%));
+  /*color: color(blue blend(50%));*/
+  color: color(blue contrast(30%));
+}
+
+/*filters*/
+.f{
+  &-blur{
+    filter: blur(4px)
+  }
+  &-grayscale{
+    filter: grayscale(4px)
+  }
+  &-contrast{
+    filter: contrast(200%)
+  }
+  &-sepia{
+    filter: sepia(60%)
+  }
+  &-saturate{
+    filter: saturate(30%)
+  }
+  &-hue-rotate{
+    filter: hue-rotate(90deg)
+  }
+  &-invert{
+    filter: invert(50%)
+  }
+  &-opacity{
+    filter: opacity(25%)
+  }
+  &-brightness{
+    filter: brightness(0.4)
+  }
+  &-drop-shadow{
+    filter: drop-shadow(16px 16px 20px blue)
+  }
+}
+
+/*snap-image*/
+.snap{
+  &-container{
+    width: 400px;
+    overflow: auto;
+    white-space: nowrap;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+    scroll-snap-destination: 0 100%;
+  }
+  &-image{
+
+  }
+}
