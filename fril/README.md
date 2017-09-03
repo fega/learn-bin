@@ -1,0 +1,16 @@
+# I want a language with
+- No ";" at the end of the line
+- Indentation as blocks, like python.
+- A good subscript ad superscript letters support (with the IDE)
+- A good but not so complex math notation and ligatures.
+- No comparator surprises
+- List comprehension
+- Good Array operations support and nice ways to operate them like python and np
+- Dynamic typing
+- Beautiful lambda functions
+- Nice Error prints
+- A visual mode, like processing
+- Objects, methods, chaining
+- Different types of functions? could be
+- Discourage loops
+- A bunch of built-in function by default
